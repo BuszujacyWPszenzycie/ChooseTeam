@@ -1,0 +1,99 @@
+@use 'colors' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	background-color: $light-gray;
+}
+
+h1 {
+	text-align: center;
+	margin: 1em 0 2em;
+	color: $font-color;
+	text-transform: uppercase;
+}
+
+.wrapper {
+	padding: 2em;
+	background-color: $grey;
+	border-radius: 8px;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.box {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 1000px;
+	height: 200px;
+	background-color: $green;
+	margin: 2em 0;
+	border-radius: 8px;
+}
+
+.team {
+	&__player {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 1em;
+		border-radius: 8px;
+		background-color: $light-gray;
+		border: 1px solid $font-color;
+		transition: background-color 0.3s;
+		cursor: grab;
+
+		&:hover {
+			background-color: $orange;
+		}
+
+		&-disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+	}
+}
+
+.chosen {
+	&__a {
+		text-decoration: none;
+		color: $font-color;
+	}
+	&__btn {
+		&-send {
+			margin: 0 auto;
+			display: block;
+			padding: 1em 3em;
+			border-radius: 8px;
+			border: none;
+			background-color: $orange;
+			cursor: pointer;
+			text-transform: uppercase;
+			font-size: 2rem;
+
+			&:disabled {
+				opacity: 0.7;
+				cursor: not-allowed;
+			}
+		}
+	}
+}
